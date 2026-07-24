@@ -128,7 +128,7 @@ function process_track6_form($if)
 
 function reconfigure_dhcpd()
 {
-    system_resolver_configure();
+    configd_run('dns reload');
     dhcpd_dhcp6_configure();
     clear_subsystem_dirty('staticmapsv6');
 }
