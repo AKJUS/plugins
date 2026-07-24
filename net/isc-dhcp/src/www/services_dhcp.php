@@ -416,7 +416,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             }
             write_config();
             if (isset($exec_filter_configure)) {
-                filter_configure();
+                configd_run('filter reload');
             }
             reconfigure_dhcpd();
             header(url_safe('Location: /services_dhcp.php?if=%s', array($if)));
